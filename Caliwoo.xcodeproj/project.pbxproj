@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B6FC69C1A957071005581EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6FC69B1A957071005581EB /* AppDelegate.swift */; };
+		6B6FC69E1A957071005581EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6FC69D1A957071005581EB /* ViewController.swift */; };
+		6B6FC6A11A957071005581EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B6FC69F1A957071005581EB /* Main.storyboard */; };
+		6B6FC6A31A957075005581EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B6FC6A21A957075005581EB /* Images.xcassets */; };
+		6B6FC6A61A957075005581EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B6FC6A41A957075005581EB /* LaunchScreen.xib */; };
+		6B6FC6B21A957075005581EB /* CaliwooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6FC6B11A957075005581EB /* CaliwooTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B6FC6AC1A957075005581EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B6FC68E1A957071005581EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B6FC6951A957071005581EB;
+			remoteInfo = Caliwoo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6B6FC6961A957071005581EB /* Caliwoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caliwoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B6FC69A1A957071005581EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B6FC69B1A957071005581EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6B6FC69D1A957071005581EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6B6FC6A01A957071005581EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B6FC6A21A957075005581EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6B6FC6A51A957075005581EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6B6FC6AB1A957075005581EB /* CaliwooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaliwooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B6FC6B01A957075005581EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B6FC6B11A957075005581EB /* CaliwooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaliwooTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B6FC6931A957071005581EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B6FC6A81A957075005581EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B6FC68D1A957071005581EB = {
+			isa = PBXGroup;
+			children = (
+				6B6FC6981A957071005581EB /* Caliwoo */,
+				6B6FC6AE1A957075005581EB /* CaliwooTests */,
+				6B6FC6971A957071005581EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B6FC6971A957071005581EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B6FC6961A957071005581EB /* Caliwoo.app */,
+				6B6FC6AB1A957075005581EB /* CaliwooTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B6FC6981A957071005581EB /* Caliwoo */ = {
+			isa = PBXGroup;
+			children = (
+				6B6FC69B1A957071005581EB /* AppDelegate.swift */,
+				6B6FC69D1A957071005581EB /* ViewController.swift */,
+				6B6FC69F1A957071005581EB /* Main.storyboard */,
+				6B6FC6A21A957075005581EB /* Images.xcassets */,
+				6B6FC6A41A957075005581EB /* LaunchScreen.xib */,
+				6B6FC6991A957071005581EB /* Supporting Files */,
+			);
+			path = Caliwoo;
+			sourceTree = "<group>";
+		};
+		6B6FC6991A957071005581EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B6FC69A1A957071005581EB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B6FC6AE1A957075005581EB /* CaliwooTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B6FC6B11A957075005581EB /* CaliwooTests.swift */,
+				6B6FC6AF1A957075005581EB /* Supporting Files */,
+			);
+			path = CaliwooTests;
+			sourceTree = "<group>";
+		};
+		6B6FC6AF1A957075005581EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B6FC6B01A957075005581EB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B6FC6951A957071005581EB /* Caliwoo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B6FC6B51A957075005581EB /* Build configuration list for PBXNativeTarget "Caliwoo" */;
+			buildPhases = (
+				6B6FC6921A957071005581EB /* Sources */,
+				6B6FC6931A957071005581EB /* Frameworks */,
+				6B6FC6941A957071005581EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Caliwoo;
+			productName = Caliwoo;
+			productReference = 6B6FC6961A957071005581EB /* Caliwoo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6B6FC6AA1A957075005581EB /* CaliwooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B6FC6B81A957075005581EB /* Build configuration list for PBXNativeTarget "CaliwooTests" */;
+			buildPhases = (
+				6B6FC6A71A957075005581EB /* Sources */,
+				6B6FC6A81A957075005581EB /* Frameworks */,
+				6B6FC6A91A957075005581EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B6FC6AD1A957075005581EB /* PBXTargetDependency */,
+			);
+			name = CaliwooTests;
+			productName = CaliwooTests;
+			productReference = 6B6FC6AB1A957075005581EB /* CaliwooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B6FC68E1A957071005581EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = KinGui;
+				TargetAttributes = {
+					6B6FC6951A957071005581EB = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					6B6FC6AA1A957075005581EB = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 6B6FC6951A957071005581EB;
+					};
+				};
+			};
+			buildConfigurationList = 6B6FC6911A957071005581EB /* Build configuration list for PBXProject "Caliwoo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B6FC68D1A957071005581EB;
+			productRefGroup = 6B6FC6971A957071005581EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B6FC6951A957071005581EB /* Caliwoo */,
+				6B6FC6AA1A957075005581EB /* CaliwooTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B6FC6941A957071005581EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B6FC6A11A957071005581EB /* Main.storyboard in Resources */,
+				6B6FC6A61A957075005581EB /* LaunchScreen.xib in Resources */,
+				6B6FC6A31A957075005581EB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B6FC6A91A957075005581EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B6FC6921A957071005581EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B6FC69E1A957071005581EB /* ViewController.swift in Sources */,
+				6B6FC69C1A957071005581EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B6FC6A71A957075005581EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B6FC6B21A957075005581EB /* CaliwooTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B6FC6AD1A957075005581EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B6FC6951A957071005581EB /* Caliwoo */;
+			targetProxy = 6B6FC6AC1A957075005581EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6B6FC69F1A957071005581EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B6FC6A01A957071005581EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6B6FC6A41A957075005581EB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B6FC6A51A957075005581EB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B6FC6B31A957075005581EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B6FC6B41A957075005581EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B6FC6B61A957075005581EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Caliwoo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6B6FC6B71A957075005581EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Caliwoo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6B6FC6B91A957075005581EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CaliwooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caliwoo.app/Caliwoo";
+			};
+			name = Debug;
+		};
+		6B6FC6BA1A957075005581EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CaliwooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caliwoo.app/Caliwoo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B6FC6911A957071005581EB /* Build configuration list for PBXProject "Caliwoo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B6FC6B31A957075005581EB /* Debug */,
+				6B6FC6B41A957075005581EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B6FC6B51A957075005581EB /* Build configuration list for PBXNativeTarget "Caliwoo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B6FC6B61A957075005581EB /* Debug */,
+				6B6FC6B71A957075005581EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6B6FC6B81A957075005581EB /* Build configuration list for PBXNativeTarget "CaliwooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B6FC6B91A957075005581EB /* Debug */,
+				6B6FC6BA1A957075005581EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B6FC68E1A957071005581EB /* Project object */;
+}
