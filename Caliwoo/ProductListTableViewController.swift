@@ -64,6 +64,7 @@ class ProductListTableViewController: UITableViewController {
         }
         
         cell.productName.text = product.name
+        cell.productPrice.text = "R$ \(product.price)"
 
         return cell
     }

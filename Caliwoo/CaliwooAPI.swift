@@ -22,7 +22,8 @@ class CaliwooAPI {
                 var products: [Product] = []
                 
                 for (index: String, product:JSON) in json["products"] {
-                    var p = Product(id: product["id"].intValue, url: product["handle"].stringValue, name: product["title"].stringValue, imageUrl: product["image"]["src"].stringValue)
+                    var p = Product(id: product["id"].intValue, name: product["title"].stringValue, price: product["variants"][0]["price"].doubleValue, imageUrl: product["image"]["src"].stringValue)
+                    p.url = product["handle"].stringValue
                     products.append(p)
                 }
                 

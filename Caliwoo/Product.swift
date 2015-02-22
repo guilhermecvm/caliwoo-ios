@@ -9,15 +9,16 @@
 import Foundation
 
 class Product: NSObject {
-    let id: Int
-    let url: String
-    let name: String
-    let imageUrl: String
+    var id: Int
+    var name: String
+    var price: Double
+    var url: String?
+    var imageUrl: String
     
-    init(id: Int, url: String, name: String, imageUrl: String) {
+    init(id: Int, name: String, price: Double, imageUrl: String) {
         self.id = id
-        self.url = url
         self.name = name
+        self.price = price
         self.imageUrl = imageUrl
     }
 
