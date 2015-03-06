@@ -16,6 +16,12 @@ class ProductListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let titleImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        titleImage.contentMode = .ScaleAspectFit
+        titleImage.image = UIImage(named: "logo")
+        navigationItem.titleView = titleImage
+        
+        
         ShopifyAPI.baseURLString = "https://kingui.myshopify.com"
         ShopifyAPI.OAuthToken = "5ae8ae530e01d5ca0efce659952c3b1e"
         

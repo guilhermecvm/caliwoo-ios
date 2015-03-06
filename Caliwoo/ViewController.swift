@@ -14,6 +14,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let titleImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        titleImage.contentMode = .ScaleAspectFit
+        titleImage.image = UIImage(named: "logo")
+        navigationItem.titleView = titleImage
     }
 
     override func didReceiveMemoryWarning() {
