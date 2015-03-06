@@ -16,8 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Parse.enableLocalDatastore()
         Parse.setApplicationId("XmNapLH4u1NDnwchVm8XvLz8MaTi6XvF393IfEmg", clientKey: "gswyvHzdfJTxNcISSJDlvYEQTAujN6VfcCJio6l2")
+        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(nil, block: nil)
+        PFAnalytics.trackAppOpenedWithRemoteNotificationPayloadInBackground(nil, block: nil)
+
         
+        // push notification
         let userNotificationTypes = (UIUserNotificationType.Alert |
             UIUserNotificationType.Badge |
             UIUserNotificationType.Sound);

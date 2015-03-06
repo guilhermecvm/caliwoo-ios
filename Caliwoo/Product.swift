@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 class Product: NSObject {
     var id: Int
@@ -14,6 +15,7 @@ class Product: NSObject {
     var price: Double
     var url: String?
     var imageUrl: String
+    var parse: PFObject?
     
     init(id: Int, name: String, price: Double, imageUrl: String) {
         self.id = id

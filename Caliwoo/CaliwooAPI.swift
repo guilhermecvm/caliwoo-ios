@@ -8,6 +8,7 @@
 
 import Alamofire
 import SwiftyJSON
+import Parse
 
 class CaliwooAPI {
     
@@ -19,15 +20,30 @@ class CaliwooAPI {
                 println(response)
             }
             else {
-                var products: [Product] = []
+                var products = [Int: Product]()
                 
                 for (index: String, product:JSON) in json["products"] {
                     var p = Product(id: product["id"].intValue, name: product["title"].stringValue, price: product["variants"][0]["price"].doubleValue, imageUrl: product["image"]["src"].stringValue)
                     p.url = product["handle"].stringValue
-                    products.append(p)
+                    products[p.id] = p
                 }
                 
-                success(products: products)
+                // get products likes on parse
+                var query = PFQuery(className:"Product")
+                query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                    if (error == nil) {
+                        if let objects = objects as? [PFObject] {
+                            for object in objects {
+                                var shopifyId = object["shopifyId"] as Int
+                                products[shopifyId]?.parse = object
+                                
+                            }
+                        }
+                    }
+                    
+                    // always success, because we want to show the products even if we can't get the number of likes
+                    success(products: products.values.array)
+                })
             }
         }
     }

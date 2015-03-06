@@ -52,18 +52,8 @@ class ProductListTableViewController: UITableViewController {
         let product = products[indexPath.row]
 
         // Configure the cell...
-        cell.productImageView.image = nil
+        cell.product = product;
         
-        Alamofire.request(.GET, product.imageUrl).validate(contentType: ["image/*"]).responseImage() {
-            (request, _, image, error) in
-            if error == nil && image != nil {
-                cell.productImageView.image = image
-            }
-        }
-        
-        cell.productName.text = product.name
-        cell.productPrice.text = "R$ \(product.price)"
-
         return cell
     }
 

@@ -114,6 +114,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B03E9261AA9E7F8000DF3CE /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				6B613A721A98D2AC00B6B6C6 /* CaliwooAPI.swift */,
+				6B613A7C1A98FEDF00B6B6C6 /* ShopifyAPI.swift */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		6B03E9271AA9E811000DF3CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B6FC69D1A957071005581EB /* ViewController.swift */,
+				6B3E9AF01A993B31000D5908 /* ProductListTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		6B1E43791A9A1A41008F4DF9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,12 +182,10 @@
 			children = (
 				6B613A821A990D2E00B6B6C6 /* Model */,
 				6B1E43791A9A1A41008F4DF9 /* Extension */,
+				6B03E9261AA9E7F8000DF3CE /* Api */,
+				6B03E9271AA9E811000DF3CE /* Controller */,
 				6B6FC69B1A957071005581EB /* AppDelegate.swift */,
-				6B6FC69D1A957071005581EB /* ViewController.swift */,
-				6B3E9AF01A993B31000D5908 /* ProductListTableViewController.swift */,
 				6B3E9AF21A993C86000D5908 /* ProductTableViewCell.swift */,
-				6B613A721A98D2AC00B6B6C6 /* CaliwooAPI.swift */,
-				6B613A7C1A98FEDF00B6B6C6 /* ShopifyAPI.swift */,
 				6B6FC69F1A957071005581EB /* Main.storyboard */,
 				6B6FC6A21A957075005581EB /* Images.xcassets */,
 				6B6FC6A41A957075005581EB /* LaunchScreen.xib */,
