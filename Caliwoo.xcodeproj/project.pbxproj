@@ -35,6 +35,7 @@
 		6B6FC6D41A957174005581EB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6FC6D31A957174005581EB /* libsqlite3.dylib */; };
 		6B7823661A96233400169A6E /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B7823651A96233400169A6E /* bg.jpg */; };
 		6B7823681A96276F00169A6E /* UIButton+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7823671A96276F00169A6E /* UIButton+Border.swift */; };
+		6BF11ABC1AAFD16D006234FD /* Alamofire-ResponseImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF11ABB1AAFD16D006234FD /* Alamofire-ResponseImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		6B6FC6D31A957174005581EB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6B7823651A96233400169A6E /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		6B7823671A96276F00169A6E /* UIButton+Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Border.swift"; sourceTree = "<group>"; };
+		6BF11ABB1AAFD16D006234FD /* Alamofire-ResponseImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-ResponseImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				6B7823671A96276F00169A6E /* UIButton+Border.swift */,
 				6B613A7E1A990BF200B6B6C6 /* Alamofire-SwiftyJSON.swift */,
+				6BF11ABB1AAFD16D006234FD /* Alamofire-ResponseImage.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				6B3E9AF31A993C86000D5908 /* ProductTableViewCell.swift in Sources */,
 				6B7823681A96276F00169A6E /* UIButton+Border.swift in Sources */,
 				6B3E9AF11A993B31000D5908 /* ProductListTableViewController.swift in Sources */,
+				6BF11ABC1AAFD16D006234FD /* Alamofire-ResponseImage.swift in Sources */,
 				6B613A7D1A98FEDF00B6B6C6 /* ShopifyAPI.swift in Sources */,
 				6B613A7F1A990BF200B6B6C6 /* Alamofire-SwiftyJSON.swift in Sources */,
 				6B613A731A98D2AC00B6B6C6 /* CaliwooAPI.swift in Sources */,

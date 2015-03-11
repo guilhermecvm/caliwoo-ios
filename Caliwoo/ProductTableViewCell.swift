@@ -83,5 +83,22 @@ class ProductTableViewCell: UITableViewCell {
                 }
             })
         }
+        
+        
+        let imageView = UIImageView(frame: self.productImageView.frame)
+        imageView.image = UIImage(named: "heart")
+        imageView.contentMode = .Center
+        self.addSubview(imageView)
+        
+        UIView.animateKeyframesWithDuration(0.75, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1, animations: { () -> Void in
+                imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 2.0, 2.0)
+            })
+            UIView.addKeyframeWithRelativeStartTime(0.25, relativeDuration: 0.75, animations: { () -> Void in
+                imageView.alpha = 0
+            })
+        }) { (finished) -> Void in
+            imageView.removeFromSuperview()
+        }
     }
 }
