@@ -12,19 +12,19 @@ import Parse
 
 class ProductTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productImageButton: UIButton!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productLikeButton: UIButton!
     
     var product: Product? {
         didSet {
-            self.productImageView.image = nil
+//            self.productImageView.image = nil
             
             Alamofire.request(.GET, product!.imageUrl).validate(contentType: ["image/*"]).responseImage() {
                 (request, _, image, error) in
                 if error == nil && image != nil {
-                    self.productImageView.image = image
+                    self.productImageButton.setBackgroundImage(image, forState: .Normal)
                 }
             }
             
@@ -51,7 +51,7 @@ class ProductTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func likeProduct(sender: AnyObject) {
+    func likeProduct() {
         if var likes = self.product?.parse?["likes"] as? Int {
             self.productLikeButton.setTitle("\(likes+1)", forState: .Normal)
             self.product?.parse?.incrementKey("likes")
@@ -84,8 +84,8 @@ class ProductTableViewCell: UITableViewCell {
             })
         }
         
-        
-        let imageView = UIImageView(frame: self.productImageView.frame)
+        // heart animation
+        let imageView = UIImageView(frame: self.productImageButton.frame)
         imageView.image = UIImage(named: "heart")
         imageView.contentMode = .Center
         self.addSubview(imageView)
@@ -100,5 +100,14 @@ class ProductTableViewCell: UITableViewCell {
         }) { (finished) -> Void in
             imageView.removeFromSuperview()
         }
+    }
+    
+    @IBAction func likeButtonTap(sender: AnyObject) {
+        self.likeProduct()
+        
+    }
+    
+    @IBAction func productImageButtonDoubleTap(sender: AnyObject) {
+        self.likeProduct()
     }
 }
