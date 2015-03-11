@@ -13,6 +13,7 @@ class Product: NSObject {
     var id: Int
     var name: String
     var price: Double
+    var compareAtPrice: Double?
     var url: String?
     var imageUrl: String
     var parse: PFObject?

@@ -24,7 +24,13 @@ class CaliwooAPI {
                 
                 for (index: String, product:JSON) in json["products"] {
                     var p = Product(id: product["id"].intValue, name: product["title"].stringValue, price: product["variants"][0]["price"].doubleValue, imageUrl: product["image"]["src"].stringValue)
+                    
+                    let compareAtPrice = product["variants"][0]["compare_at_price"].doubleValue
+                    if (compareAtPrice > p.price) {
+                        p.compareAtPrice = compareAtPrice
+                    }
                     p.url = product["handle"].stringValue
+                    
                     products[p.id] = p
                 }
                 

@@ -29,9 +29,16 @@ class ProductTableViewCell: UITableViewCell {
             }
             
             self.productName.text = product!.name
-            self.productPrice.text = "R$ \(product!.price)"
             
-            if var likes = product?.parse?["likes"] as? Int {
+            if let compareAtPrice = product!.compareAtPrice {
+                self.productPrice.text = "De R$ \(compareAtPrice) Por R$ \(product!.price)"
+            }
+            else {
+                self.productPrice.text = "R$ \(product!.price)"
+            }
+            
+            
+            if let likes = product?.parse?["likes"] as? Int {
                 self.productLikeButton.setTitle("\(likes)", forState: .Normal)
             }
             else {
