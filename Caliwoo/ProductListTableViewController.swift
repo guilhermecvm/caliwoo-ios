@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ProductListTableViewController: UITableViewController {
+class ProductListTableViewController: UITableViewController, ProductTableViewCellDelegate {
     
     var collection: Collection?
     var products: [Product] = []
@@ -57,8 +57,22 @@ class ProductListTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.product = product;
+        cell.delegate = self
         
         return cell
+    }
+    
+    // MARK: - ProductTableViewCellDelegate
+    
+    func productTableViewCellDidLikeProduct(cell: ProductTableViewCell, sender: AnyObject) {
+        // if product has likes
+        if var likes = cell.product?.parse?["likes"] as? Int {
+            cell.productLikeButton.setTitle("\(likes+1)", forState: .Normal)
+            
+            // save product
+            cell.product?.parse?.incrementKey("likes")
+            cell.product?.parse?.saveEventually(nil)
+        }
     }
 
     /*

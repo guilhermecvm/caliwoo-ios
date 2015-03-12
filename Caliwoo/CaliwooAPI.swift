@@ -20,7 +20,7 @@ class CaliwooAPI {
                 println(response)
             }
             else {
-                var products = [Int: Product]()
+                var products = [Product]()
                 
                 for (index: String, product:JSON) in json["products"] {
                     var p = Product(id: product["id"].intValue, name: product["title"].stringValue, price: product["variants"][0]["price"].doubleValue)
@@ -32,24 +32,47 @@ class CaliwooAPI {
                         p.compareAtPrice = compareAtPrice
                     }
                     
-                    products[p.id] = p
+                    products.append(p)
                 }
                 
-                // get products likes on parse
+                // get products likes from parse
                 var query = PFQuery(className:"Product")
                 query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                     if (error == nil) {
                         if let objects = objects as? [PFObject] {
+                            var parseProducts = [Int: PFObject]()
+                            var newParseProducts = [PFObject]()
+                            
+                            // create array of parse products indexed by shopifyId
                             for object in objects {
                                 var shopifyId = object["shopifyId"] as Int
-                                products[shopifyId]?.parse = object
-                                
+                                parseProducts[shopifyId] = object
                             }
+                            
+                            // set product
+                            for product in products {
+                                var parseProduct = parseProducts[product.id]
+                                
+                                // create parse product if not found
+                                if (parseProduct == nil) {
+                                    parseProduct = PFObject(className: "Product")
+                                    parseProduct!["shopifyId"] = product.id
+                                    parseProduct!["name"] = product.name
+                                    parseProduct!["likes"] = 0
+                                    
+                                    newParseProducts.append(parseProduct!)
+                                }
+                                
+                                product.parse = parseProduct
+                            }
+                            
+                            // save all parse products
+                            PFObject.saveAllInBackground(newParseProducts, block: nil)
                         }
                     }
                     
                     // always success, because we want to show the products even if we can't get the number of likes
-                    success(products: products.values.array)
+                    success(products: products)
                 })
             }
         }
@@ -63,7 +86,7 @@ class CaliwooAPI {
                 println(response)
             }
             else {
-                var products = [Int: Product]()
+                var products = [Product]()
                 
                 for (index: String, product:JSON) in json["products"] {
                     var p = Product(id: product["id"].intValue, name: product["title"].stringValue, price: product["variants"][0]["price"].doubleValue)
@@ -75,24 +98,47 @@ class CaliwooAPI {
                         p.compareAtPrice = compareAtPrice
                     }
                     
-                    products[p.id] = p
+                    products.append(p)
                 }
                 
-                // get products likes on parse
+                // get products likes from parse
                 var query = PFQuery(className:"Product")
                 query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                     if (error == nil) {
                         if let objects = objects as? [PFObject] {
+                            var parseProducts = [Int: PFObject]()
+                            var newParseProducts = [PFObject]()
+                            
+                            // create array of parse products indexed by shopifyId
                             for object in objects {
                                 var shopifyId = object["shopifyId"] as Int
-                                products[shopifyId]?.parse = object
-                                
+                                parseProducts[shopifyId] = object
                             }
+                            
+                            // set product
+                            for product in products {
+                                var parseProduct = parseProducts[product.id]
+                                
+                                // create parse product if not found
+                                if (parseProduct == nil) {
+                                    parseProduct = PFObject(className: "Product")
+                                    parseProduct!["shopifyId"] = product.id
+                                    parseProduct!["name"] = product.name
+                                    parseProduct!["likes"] = 0
+                                    
+                                    newParseProducts.append(parseProduct!)
+                                }
+                                
+                                product.parse = parseProduct
+                            }
+                            
+                            // save all parse products
+                            PFObject.saveAllInBackground(newParseProducts, block: nil)
                         }
                     }
                     
                     // always success, because we want to show the products even if we can't get the number of likes
-                    success(products: products.values.array)
+                    success(products: products)
                 })
             }
         }

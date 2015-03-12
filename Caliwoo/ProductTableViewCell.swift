@@ -8,7 +8,10 @@
 
 import UIKit
 import Alamofire
-import Parse
+
+protocol ProductTableViewCellDelegate {
+    func productTableViewCellDidLikeProduct(cell: ProductTableViewCell, sender: AnyObject)
+}
 
 class ProductTableViewCell: UITableViewCell {
     
@@ -17,6 +20,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productLikeButton: UIButton!
     
+    var delegate: ProductTableViewCellDelegate?
     var product: Product? {
         didSet {
 //            self.productImageView.image = nil
@@ -60,38 +64,12 @@ class ProductTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func likeProduct() {
-        if var likes = self.product?.parse?["likes"] as? Int {
-            self.productLikeButton.setTitle("\(likes+1)", forState: .Normal)
-            self.product?.parse?.incrementKey("likes")
-            
-            self.product?.parse?.saveEventually(nil)
-        }
-        else {
-            self.productLikeButton.setTitle("1", forState: .Normal)
-            
-            // fetch product
-            var query = PFQuery(className:"Product")
-            query.whereKey("shopifyId", equalTo: self.product?.id)
-            query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                if (error == nil) {
-                    if (objects.count == 0) {
-                        // create product if not found
-                        var parse = PFObject(className: "Product")
-                        parse["shopifyId"] = self.product?.id
-                        parse["name"] = self.product?.name
-                        parse.incrementKey("likes")
-                        self.product?.parse = parse
-                    }
-                    else {
-                        objects[0].incrementKey("likes")
-                        self.product?.parse = objects[0] as? PFObject
-                    }
-                    
-                    self.product?.parse?.saveEventually(nil)
-                }
-            })
-        }
+    @IBAction func likeButtonTap(sender: AnyObject) {
+        delegate?.productTableViewCellDidLikeProduct(self, sender: sender)
+    }
+    
+    @IBAction func productImageButtonDoubleTap(sender: AnyObject) {
+        delegate?.productTableViewCellDidLikeProduct(self, sender: sender)
         
         // heart animation
         let imageView = UIImageView(frame: self.productImageButton.frame)
@@ -109,14 +87,5 @@ class ProductTableViewCell: UITableViewCell {
         }) { (finished) -> Void in
             imageView.removeFromSuperview()
         }
-    }
-    
-    @IBAction func likeButtonTap(sender: AnyObject) {
-        self.likeProduct()
-        
-    }
-    
-    @IBAction func productImageButtonDoubleTap(sender: AnyObject) {
-        self.likeProduct()
     }
 }
