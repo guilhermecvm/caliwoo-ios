@@ -14,12 +14,18 @@ enum ShopifyAPI: URLRequestConvertible {
     
     case ListProducts()
     case ReadProduct(String)
+    case ListProductsFromCollection(Int)
+    case ListCollections()
     
     var method: Alamofire.Method {
         switch self {
         case .ListProducts:
             return .GET
         case .ReadProduct:
+            return .GET
+        case .ListProductsFromCollection:
+            return .GET
+        case .ListCollections:
             return .GET
         }
     }
@@ -30,14 +36,21 @@ enum ShopifyAPI: URLRequestConvertible {
             return "/admin/products.json"
         case .ReadProduct(let id):
             return "/admin/products/\(id).json"
+        case .ListProductsFromCollection(let collectionId):
+            return "/admin/products.json?collection_id=\(collectionId)"
+        case .ListCollections():
+            return "/admin/custom_collections.json"
         }
     }
     
     // MARK: URLRequestConvertible
     
-    var URLRequest: NSURLRequest {
-        let URL = NSURL(string: ShopifyAPI.baseURLString)!
-        let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
+    var URLRequest: NSURLRequest {        
+        let urlString = "\(ShopifyAPI.baseURLString)\(path)"
+        
+        let URL = NSURL(string: urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+        
+        let mutableURLRequest = NSMutableURLRequest(URL: URL)
         mutableURLRequest.HTTPMethod = method.rawValue
         
         if let token = ShopifyAPI.OAuthToken {

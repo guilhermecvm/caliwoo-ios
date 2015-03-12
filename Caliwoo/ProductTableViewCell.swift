@@ -21,10 +21,12 @@ class ProductTableViewCell: UITableViewCell {
         didSet {
 //            self.productImageView.image = nil
             
-            Alamofire.request(.GET, product!.imageUrl).validate(contentType: ["image/*"]).responseImage() {
-                (request, _, image, error) in
-                if error == nil && image != nil {
-                    self.productImageButton.setBackgroundImage(image, forState: .Normal)
+            if let imageUrl = product!.imageUrl {
+                Alamofire.request(.GET, imageUrl).validate(contentType: ["image/*"]).responseImage() {
+                    (request, _, image, error) in
+                    if error == nil && image != nil {
+                        self.productImageButton.setBackgroundImage(image, forState: .Normal)
+                    }
                 }
             }
             

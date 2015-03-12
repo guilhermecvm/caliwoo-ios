@@ -1,19 +1,18 @@
 //
-//  ProductListTableViewController.swift
+//  CollectionListTableViewController.swift
 //  Caliwoo
 //
-//  Created by Guilherme Miranda on 21/02/15.
+//  Created by Guilherme Miranda on 3/11/15.
 //  Copyright (c) 2015 KinGui. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class ProductListTableViewController: UITableViewController {
+class CollectionListTableViewController: UITableViewController {
     
-    var collection: Collection?
-    var products: [Product] = []
-
+    var collections: [Collection] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,15 +21,9 @@ class ProductListTableViewController: UITableViewController {
         titleImage.image = UIImage(named: "logo")
         navigationItem.titleView = titleImage
         
-//        CaliwooAPI.getProductsWithSuccess { (products) -> Void in
-//            self.products = products
-//            self.tableView.reloadData()
-//        }
-        if let collection = self.collection {
-            CaliwooAPI.getProductsFromCollectionWithSuccess(collection.id, success: { (products) -> Void in
-                self.products = products
-                self.tableView.reloadData()
-            })
+        CaliwooAPI.getCollectionsWithSuccess { (collections) -> Void in
+            self.collections = collections
+            self.tableView.reloadData()
         }
     }
 
@@ -47,28 +40,29 @@ class ProductListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return collections.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as ProductTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as CollectionTableViewCell
         
-        let product = products[indexPath.row]
-
+        let collection = collections[indexPath.row]
+        
         // Configure the cell...
-        cell.product = product;
+        cell.collection = collection;
         
         return cell
     }
+    
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let productListTableViewController = segue.destinationViewController as ProductListTableViewController
+        productListTableViewController.collection = (sender as CollectionTableViewCell).collection
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

@@ -15,14 +15,13 @@ class Product: NSObject {
     var price: Double
     var compareAtPrice: Double?
     var url: String?
-    var imageUrl: String
+    var imageUrl: String?
     var parse: PFObject?
     
-    init(id: Int, name: String, price: Double, imageUrl: String) {
+    init(id: Int, name: String, price: Double) {
         self.id = id
         self.name = name
         self.price = price
-        self.imageUrl = imageUrl
     }
 
 }
