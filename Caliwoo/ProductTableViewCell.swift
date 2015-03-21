@@ -43,12 +43,19 @@ class ProductTableViewCell: UITableViewCell {
                 self.productPrice.text = "R$ \(product!.price)"
             }
             
-            
-            if let likes = product?.parse?["likes"] as? Int {
+            if (product!.parse != nil) {
+                var likes = product!.parse!["likes"] as Int
                 self.productLikeButton.setTitle("\(likes)", forState: .Normal)
+                
+                if (CWCache.sharedInstance.isProductLikedByUser(product!.parse!)) {
+                    self.productLikeButton.backgroundColor = UIColor(red: 244.0/255.0, green: 67.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+                }
+                else {
+                    self.productLikeButton.backgroundColor = nil
+                }
             }
             else {
-                self.productLikeButton.setTitle("curtir", forState: .Normal)
+                self.productLikeButton.setTitle("0", forState: .Normal)
             }
         }
     }

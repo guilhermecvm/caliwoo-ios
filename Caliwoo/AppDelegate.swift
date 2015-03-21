@@ -19,11 +19,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ShopifyAPI.baseURLString = "https://kingui.myshopify.com"
         ShopifyAPI.OAuthToken = "5ae8ae530e01d5ca0efce659952c3b1e"
         
-        Parse.enableLocalDatastore()
+//        Parse.enableLocalDatastore()
         Parse.setApplicationId("XmNapLH4u1NDnwchVm8XvLz8MaTi6XvF393IfEmg", clientKey: "gswyvHzdfJTxNcISSJDlvYEQTAujN6VfcCJio6l2")
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(nil, block: nil)
         PFAnalytics.trackAppOpenedWithRemoteNotificationPayloadInBackground(nil, block: nil)
-
+        
+        PFUser.enableAutomaticUser()
+        PFUser.currentUser().incrementKey("runCount")
+//        PFUser.currentUser().ACL = PFACL(user: PFUser.currentUser())
+        PFUser.currentUser().saveInBackgroundWithBlock(nil)
+        
+        // get user likes        
+        var query = PFQuery(className:"Like")
+        query.whereKey("user", equalTo: PFUser.currentUser())
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if (error == nil) {
+                if let objects = objects as? [PFObject] {
+                    for object in objects {
+                        CWCache.sharedInstance.setPhotoLikedByUser(object["product"] as PFObject, liked: true)
+                    }
+                }
+            }
+        }
         
         // push notification
         let userNotificationTypes = (UIUserNotificationType.Alert |

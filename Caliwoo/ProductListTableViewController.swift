@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Parse
 
 class ProductListTableViewController: UITableViewController, ProductTableViewCellDelegate {
     
@@ -65,13 +66,26 @@ class ProductListTableViewController: UITableViewController, ProductTableViewCel
     // MARK: - ProductTableViewCellDelegate
     
     func productTableViewCellDidLikeProduct(cell: ProductTableViewCell, sender: AnyObject) {
-        // if product has likes
+        // if product exists in parse
         if var likes = cell.product?.parse?["likes"] as? Int {
-            cell.productLikeButton.setTitle("\(likes+1)", forState: .Normal)
-            
-            // save product
-            cell.product?.parse?.incrementKey("likes")
-            cell.product?.parse?.saveEventually(nil)
+            if (!CWCache.sharedInstance.isProductLikedByUser(cell.product!.parse!)) {
+                // update cache
+                CWCache.sharedInstance.setPhotoLikedByUser(cell.product!.parse!, liked: true)
+                
+                cell.productLikeButton.setTitle("\(likes+1)", forState: .Normal)
+                cell.productLikeButton.backgroundColor = UIColor(red: 244.0/255.0, green: 67.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+                
+                // save product
+                cell.product?.parse?.incrementKey("likes")
+                
+                // save like
+                var like = PFObject(className: "Like")
+                like["user"] = PFUser.currentUser()
+                like["product"] = cell.product?.parse
+                like.ACL = PFACL(user: PFUser.currentUser())
+                like.ACL.setPublicReadAccess(true)
+                like.saveEventually(nil)
+            }
         }
     }
 
