@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Parse
 
-class ProductListTableViewController: UITableViewController, ProductTableViewCellDelegate {
+class ProductListTableViewController: UITableViewController, ProductTableViewCellDelegate, ENSideMenuDelegate {
     
     var collection: Collection?
     var products: [Product] = []
@@ -89,6 +89,9 @@ class ProductListTableViewController: UITableViewController, ProductTableViewCel
         }
     }
 
+    @IBAction func toggleSlideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
     /*
     // MARK: - Navigation
 
