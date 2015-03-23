@@ -73,7 +73,7 @@ class ProductListTableViewController: UITableViewController, ProductTableViewCel
                 CWCache.sharedInstance.setPhotoLikedByUser(cell.product!.parse!, liked: true)
                 
                 cell.productLikeButton.setTitle("\(likes+1)", forState: .Normal)
-                cell.productLikeButton.backgroundColor = UIColor(red: 244.0/255.0, green: 67.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+                cell.productLikeButton.setImage(UIImage(named: "icon-heart-fill"), forState: .Normal)
                 
                 // save product
                 cell.product?.parse?.incrementKey("likes")

@@ -48,10 +48,10 @@ class ProductTableViewCell: UITableViewCell {
                 self.productLikeButton.setTitle("\(likes)", forState: .Normal)
                 
                 if (CWCache.sharedInstance.isProductLikedByUser(product!.parse!)) {
-                    self.productLikeButton.backgroundColor = UIColor(red: 244.0/255.0, green: 67.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+                    self.productLikeButton.setImage(UIImage(named: "icon-heart-fill"), forState: .Normal)
                 }
                 else {
-                    self.productLikeButton.backgroundColor = nil
+                    self.productLikeButton.setImage(UIImage(named: "icon-heart"), forState: .Normal)
                 }
             }
             else {

@@ -26,8 +26,10 @@ class MenuTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red: 149.0/255.0, green: 209.0/255.0, blue: 215.0/255.0, alpha: 1)
+        self.selectedBackgroundView = bgColorView
     }
 
 }
