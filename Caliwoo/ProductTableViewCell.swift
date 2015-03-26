@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Haneke
 
 protocol ProductTableViewCellDelegate {
     func productTableViewCellDidLikeProduct(cell: ProductTableViewCell, sender: AnyObject)
@@ -23,15 +24,9 @@ class ProductTableViewCell: UITableViewCell {
     var delegate: ProductTableViewCellDelegate?
     var product: Product? {
         didSet {
-//            self.productImageView.image = nil
-            
             if let imageUrl = product!.imageUrl {
-                Alamofire.request(.GET, imageUrl).validate(contentType: ["image/*"]).responseImage() {
-                    (request, _, image, error) in
-                    if error == nil && image != nil {
-                        self.productImageButton.setBackgroundImage(image, forState: .Normal)
-                    }
-                }
+                productImageButton.hnk_setBackgroundImageFromURL(NSURL(string: imageUrl)!, state: .Normal)
+                productImageButton.hnk_setBackgroundImageFromURL(NSURL(string: imageUrl)!, state: .Normal)
             }
             
             self.productName.text = product!.name
@@ -63,6 +58,10 @@ class ProductTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        productImageButton.setImage(nil, forState: .Normal)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

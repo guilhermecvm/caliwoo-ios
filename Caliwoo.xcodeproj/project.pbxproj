@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B3E9AF11A993B31000D5908 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3E9AF01A993B31000D5908 /* ProductListTableViewController.swift */; };
 		6B3E9AF31A993C86000D5908 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3E9AF21A993C86000D5908 /* ProductTableViewCell.swift */; };
+		6B591E341AC390B9003C2C0A /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B591E331AC390B9003C2C0A /* Haneke.framework */; };
 		6B5DAC271ABC5EB8004125D9 /* CWCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5DAC261ABC5EB8004125D9 /* CWCache.swift */; };
 		6B613A731A98D2AC00B6B6C6 /* CaliwooAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B613A721A98D2AC00B6B6C6 /* CaliwooAPI.swift */; };
 		6B613A7A1A98F93600B6B6C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B613A781A98F93600B6B6C6 /* Alamofire.framework */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		6B3E9AF01A993B31000D5908 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
 		6B3E9AF21A993C86000D5908 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		6B591E331AC390B9003C2C0A /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		6B5DAC261ABC5EB8004125D9 /* CWCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCache.swift; sourceTree = "<group>"; };
 		6B613A721A98D2AC00B6B6C6 /* CaliwooAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaliwooAPI.swift; sourceTree = "<group>"; };
 		6B613A781A98F93600B6B6C6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				6B6FC6C01A95712A005581EB /* AudioToolbox.framework in Frameworks */,
 				6B6FC6BE1A957109005581EB /* Parse.framework in Frameworks */,
 				6B6FC6BD1A957109005581EB /* Bolts.framework in Frameworks */,
+				6B591E341AC390B9003C2C0A /* Haneke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +169,7 @@
 			children = (
 				6B613A781A98F93600B6B6C6 /* Alamofire.framework */,
 				6B613A791A98F93600B6B6C6 /* SwiftyJSON.framework */,
+				6B591E331AC390B9003C2C0A /* Haneke.framework */,
 			);
 			name = Carthage;
 			sourceTree = "<group>";
@@ -384,6 +388,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 			);
 			name = "Run Script";
 			outputPaths = (

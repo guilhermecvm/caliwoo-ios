@@ -27,16 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFUser.enableAutomaticUser()
         PFUser.currentUser().incrementKey("runCount")
 //        PFUser.currentUser().ACL = PFACL(user: PFUser.currentUser())
-        PFUser.currentUser().saveInBackgroundWithBlock(nil)
-        
-        // get user likes        
-        var query = PFQuery(className:"Like")
-        query.whereKey("user", equalTo: PFUser.currentUser())
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+        PFUser.currentUser().saveInBackgroundWithBlock { (success, error) -> Void in
             if (error == nil) {
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        CWCache.sharedInstance.setPhotoLikedByUser(object["product"] as PFObject, liked: true)
+                // get user likes
+                var query = PFQuery(className:"Like")
+                query.whereKey("user", equalTo: PFUser.currentUser())
+                query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+                    if (error == nil) {
+                        if let objects = objects as? [PFObject] {
+                            for object in objects {
+                                CWCache.sharedInstance.setPhotoLikedByUser(object["product"] as PFObject, liked: true)
+                            }
+                        }
                     }
                 }
             }
