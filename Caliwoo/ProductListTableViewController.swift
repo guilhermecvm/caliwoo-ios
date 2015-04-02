@@ -18,6 +18,9 @@ class ProductListTableViewController: UITableViewController, ProductTableViewCel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 600.0;
+        
         let titleImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         titleImage.contentMode = .ScaleAspectFit
         titleImage.image = UIImage(named: "logo")
