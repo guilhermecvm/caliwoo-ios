@@ -43,6 +43,7 @@
 		6BB504211ABF6C8000698DF9 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB504201ABF6C8000698DF9 /* ENSideMenu.swift */; };
 		6BB504231ABF6C8C00698DF9 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB504221ABF6C8C00698DF9 /* ENSideMenuNavigationController.swift */; };
 		6BB504251ABF6DA600698DF9 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB504241ABF6DA600698DF9 /* NavigationViewController.swift */; };
+		6BD2DB1C1ACAE43C002D5905 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD2DB1B1ACAE43C002D5905 /* ProductDetailViewController.swift */; };
 		6BF11ABC1AAFD16D006234FD /* Alamofire-ResponseImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF11ABB1AAFD16D006234FD /* Alamofire-ResponseImage.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		6BB504201ABF6C8000698DF9 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		6BB504221ABF6C8C00698DF9 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		6BB504241ABF6DA600698DF9 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		6BD2DB1B1ACAE43C002D5905 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		6BF11ABB1AAFD16D006234FD /* Alamofire-ResponseImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-ResponseImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,10 +148,11 @@
 		6B03E9271AA9E811000DF3CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6BB3A1961AB1241A00DD0D90 /* MenuTableViewController.swift */,
-				6B3E9AF01A993B31000D5908 /* ProductListTableViewController.swift */,
-				6BB5041D1ABF6B6F00698DF9 /* MainViewController.swift */,
 				6BB504241ABF6DA600698DF9 /* NavigationViewController.swift */,
+				6BB3A1961AB1241A00DD0D90 /* MenuTableViewController.swift */,
+				6BB5041D1ABF6B6F00698DF9 /* MainViewController.swift */,
+				6B3E9AF01A993B31000D5908 /* ProductListTableViewController.swift */,
+				6BD2DB1B1ACAE43C002D5905 /* ProductDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				6BF11ABC1AAFD16D006234FD /* Alamofire-ResponseImage.swift in Sources */,
 				6B613A7D1A98FEDF00B6B6C6 /* ShopifyAPI.swift in Sources */,
 				6BB5041E1ABF6B6F00698DF9 /* MainViewController.swift in Sources */,
+				6BD2DB1C1ACAE43C002D5905 /* ProductDetailViewController.swift in Sources */,
 				6BB3A1951AB121CF00DD0D90 /* Collection.swift in Sources */,
 				6B613A7F1A990BF200B6B6C6 /* Alamofire-SwiftyJSON.swift in Sources */,
 				6B613A731A98D2AC00B6B6C6 /* CaliwooAPI.swift in Sources */,

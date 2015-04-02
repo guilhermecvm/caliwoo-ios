@@ -14,8 +14,8 @@ class NavigationViewController: ENSideMenuNavigationController, ENSideMenuDelega
         super.viewDidLoad()
         
         sideMenu = ENSideMenu(sourceView: self.view, menuTableViewController: self.storyboard?.instantiateViewControllerWithIdentifier("MenuTableViewController") as MenuTableViewController, menuPosition:.Left)
-        sideMenu?.menuWidth = 180.0
-        sideMenu?.bouncingEnabled = true
+        sideMenu?.menuWidth = 200.0
+        sideMenu?.bouncingEnabled = false
         
         view.bringSubviewToFront(navigationBar)
     }

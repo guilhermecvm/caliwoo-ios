@@ -12,6 +12,7 @@ import Haneke
 
 protocol ProductTableViewCellDelegate {
     func productTableViewCellDidLikeProduct(cell: ProductTableViewCell, sender: AnyObject)
+    func productTableViewCellDidSelectProduct(cell: ProductTableViewCell, sender: AnyObject)
 }
 
 class ProductTableViewCell: UITableViewCell {
@@ -24,9 +25,8 @@ class ProductTableViewCell: UITableViewCell {
     var delegate: ProductTableViewCellDelegate?
     var product: Product? {
         didSet {
-            if let imageUrl = product!.imageUrl {
-                productImageButton.hnk_setBackgroundImageFromURL(NSURL(string: imageUrl)!, state: .Normal)
-                productImageButton.hnk_setBackgroundImageFromURL(NSURL(string: imageUrl)!, state: .Normal)
+            if (product!.images.count > 0) {
+                productImageButton.hnk_setBackgroundImageFromURL(NSURL(string: product!.images[0])!, state: .Normal)
             }
             
             self.productName.text = product!.name
@@ -93,5 +93,9 @@ class ProductTableViewCell: UITableViewCell {
         }) { (finished) -> Void in
             imageView.removeFromSuperview()
         }
+    }
+    
+    @IBAction func productImageButtonTap(sender: AnyObject) {
+        self.delegate?.productTableViewCellDidSelectProduct(self, sender: sender)
     }
 }

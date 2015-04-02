@@ -15,7 +15,7 @@ class Product: NSObject {
     var price: Double
     var compareAtPrice: Double?
     var url: String?
-    var imageUrl: String?
+    var images = [String]()
     var parse: PFObject?
     
     init(id: Int, name: String, price: Double) {

@@ -12,6 +12,7 @@ import Parse
 
 class CaliwooAPI {
     
+    // TODO: Refactor getProductsWithSuccess and getProductsFromCollectionWithSuccess
     class func getProductsWithSuccess(success: ((products: [Product]) -> Void)) {
         Alamofire.request(ShopifyAPI.ListProducts()).responseSwiftyJSON { (request, response, json, error) -> Void in
             if (error != nil) {
@@ -24,7 +25,11 @@ class CaliwooAPI {
                 
                 for (index: String, product:JSON) in json["products"] {
                     var p = Product(id: product["id"].intValue, name: product["title"].stringValue, price: product["variants"][0]["price"].doubleValue)
-                    p.imageUrl = product["image"]["src"].stringValue
+                    
+                    for (index: String, image: JSON) in product["images"] {
+                        p.images.append(image["src"].stringValue)
+                        
+                    }
                     p.url = product["handle"].stringValue
                     
                     let compareAtPrice = product["variants"][0]["compare_at_price"].doubleValue
@@ -90,7 +95,11 @@ class CaliwooAPI {
                 
                 for (index: String, product:JSON) in json["products"] {
                     var p = Product(id: product["id"].intValue, name: product["title"].stringValue, price: product["variants"][0]["price"].doubleValue)
-                    p.imageUrl = product["image"]["src"].stringValue
+
+                    for (index: String, image: JSON) in product["images"] {
+                        p.images.append(image["src"].stringValue)
+                        
+                    }
                     p.url = product["handle"].stringValue
                     
                     let compareAtPrice = product["variants"][0]["compare_at_price"].doubleValue

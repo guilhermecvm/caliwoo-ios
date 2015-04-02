@@ -39,7 +39,10 @@ class ProductListTableViewController: UITableViewController, ProductTableViewCel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func toggleSlideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
     
     // MARK: - Table view data source
 
@@ -88,18 +91,19 @@ class ProductListTableViewController: UITableViewController, ProductTableViewCel
             }
         }
     }
-
-    @IBAction func toggleSlideMenu(sender: AnyObject) {
-        toggleSideMenuView()
+    
+    func productTableViewCellDidSelectProduct(cell: ProductTableViewCell, sender: AnyObject) {
+        self.performSegueWithIdentifier("showProductDetail", sender: cell)
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showProductDetail") {
+            let productDetailViewController = segue.destinationViewController as ProductDetailViewController
+            productDetailViewController.product = (sender as ProductTableViewCell).product!
+        }
     }
-    */
 
 }
